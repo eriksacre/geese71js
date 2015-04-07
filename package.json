@@ -1,0 +1,23 @@
+{
+  "name": "geese71",
+  "version": "0.0.1",
+  "description": "The ultimate prototype for employee empowerment apps",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --progress --colors --watch",
+    "test": "echo \"Error: no test specified!\" && exit 1"
+  },
+  "author": "Erik Sacré",
+  "license": "MIT",
+  "dependencies": {
+    "envify": "^1.2.0",
+    "react": "^0.13.1"
+  },
+  "devDependencies": {
+    "webpack": "^1.4.13",
+    "jsx-loader": "^0.13.1",
+    "style-loader": "^0.9.0",
+    "sass-loader": "^1.0.1",
+    "css-loader": "^0.9.1"
+  }
+}
