@@ -9,16 +9,21 @@ The project is designed for big-ish applications, i.e.
 
 * Code and assets are grouped per application module (projects, people)
 * Modules are loaded dynamically, the first time they are used
+* Jest is used for testing
 
 ## To do
 
 * Find a real client-side router that can plug into the dynamic load mechanism
-* Setup a testing framework for TDD-ing
+* Flux
 
 ## Developing
 
-npm install
-npm start
+* npm install
+* npm start
+
+Run tests: npm test
+
+Note: Required Node 0.10.x. Tests do not work with newer versions.
 
 ## Building for production
 

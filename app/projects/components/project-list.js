@@ -1,7 +1,10 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-require ('./project-list.css');
+
+if(!process.env.TEST) {
+    require('./project-list.scss');
+}
 
 var ProjectList = React.createClass({
     render: function() {

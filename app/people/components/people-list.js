@@ -1,7 +1,10 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-require ('./people-list.css');
+
+if(!process.env.TEST) {
+    require('./people-list.scss');
+}
 
 var PeopleList = React.createClass({
     render: function() {

@@ -5,7 +5,20 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --progress --colors --watch",
-    "test": "echo \"Error: no test specified!\" && exit 1"
+    "test": "TEST=1 jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testFileExtensions": [
+      "js"
+    ],
+    "testDirectoryName": "tests"
   },
   "author": "Erik Sacré",
   "license": "MIT",
@@ -14,9 +27,12 @@
     "react": "^0.13.1"
   },
   "devDependencies": {
-    "webpack": "^1.4.13",
+    "css-loader": "^0.9.1",
+    "jest-cli": "^0.4.0",
     "jsx-loader": "^0.13.1",
+    "react-tools": "^0.13.1",
     "style-loader": "^0.9.0",
-    "css-loader": "^0.9.1"
+    "sass-loader": "0.6.0",
+    "webpack": "^1.4.13"
   }
 }
