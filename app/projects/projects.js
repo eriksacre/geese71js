@@ -10,7 +10,7 @@ var Projects = {
     ],
 
     show: function() {
-        React.render(<ProjectList data={this.data} />, document.body);
+        React.render(<ProjectList data={this.data} title="Projects" />, document.body);
     }
 };
 

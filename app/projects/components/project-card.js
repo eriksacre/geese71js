@@ -2,6 +2,10 @@
 
 var React = require('react');
 
+if(!process.env.TEST) {
+    require('./project-card.scss');
+}
+
 var ProjectCard = React.createClass({
     projectUrl: function(id) {
         return this.props.url + id;

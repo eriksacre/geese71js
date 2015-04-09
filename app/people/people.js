@@ -10,7 +10,7 @@ var People = {
     ],
 
     show: function() {
-        React.render(<PeopleList data={this.data} />, document.body);
+        React.render(<PeopleList data={this.data} title="People" />, document.body);
     }
 };
 

@@ -1,4 +1,7 @@
-var React = require('react');
+// TODO: find a better place for these requires
+// These are only here to add shared code into main.js
+require('react');
+require('./app/shared/set-title-mixin');
 
 // Simple router & incremental loader
 // Structure: #/module/other/parts?query-string
