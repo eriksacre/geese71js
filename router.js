@@ -50,7 +50,7 @@ var Router = {
         var module = pathSections[0];
 
         if(module === '') {
-            module = this.defaultModule;
+            module = Router.defaultModule;
         }
 
         // Split points for dynamic loading

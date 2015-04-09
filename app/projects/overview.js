@@ -6,7 +6,7 @@ var Overview = {
     data: {id: 1, name: 'Geese71'},
 
     show: function() {
-        React.render(<div>{this.data}</div>, document.body);
+        React.render(<div>{this.data.name}</div>, document.body);
     }
 };
 

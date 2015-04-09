@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 
 var React = require('react');
+var ProjectCard = require('./project-card');
 
 if(!process.env.TEST) {
     require('./project-list.scss');
@@ -9,7 +10,7 @@ if(!process.env.TEST) {
 var ProjectList = React.createClass({
     render: function() {
         var projects = this.props.data.map(function(project) {
-            return (<div className="ProjectList-project" key={project.id}>{project.name}</div>);
+            return (<ProjectCard key={project.id} data={project} url='#/projects/' />);
         });
 
         return (
