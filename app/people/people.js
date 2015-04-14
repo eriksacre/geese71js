@@ -2,16 +2,16 @@
 var React = require('react');
 var PeopleList = require('./components/people-list');
 
-var People = {
-    data: [
-        { id: 1, name: 'Erik' },
-        { id: 2, name: 'Jurgen' },
-        { id: 3, name: 'Katty' }
-    ],
+var data = [
+    { id: 1, name: 'Erik' },
+    { id: 2, name: 'Jurgen' },
+    { id: 3, name: 'Katty' }
+];
 
-    show: function() {
-        React.render(<PeopleList data={this.data} title="People" />, document.body);
+var People = React.createClass({
+    render: function() {
+        return (<PeopleList data={data} title="People" />);
     }
-};
+});
 
 module.exports = People;

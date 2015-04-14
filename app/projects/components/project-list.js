@@ -5,7 +5,7 @@ var ProjectCard = require('./project-card');
 var SetTitleMixin = require('../../shared/set-title-mixin');
 
 if(!process.env.TEST) {
-    require('./project-list.scss');
+    require('./project-list.css');
 }
 
 var ProjectList = React.createClass({
@@ -17,13 +17,8 @@ var ProjectList = React.createClass({
         });
 
         return (
-            <div>
-                <div className="ProjectList">
-                    {projects}
-                </div>
-                <div>
-                    <a href="#/people">People</a>
-                </div>
+            <div className="ProjectList">
+                {projects}
             </div>
         );
     }

@@ -1,74 +1,40 @@
-// TODO: find a better place for these requires
-// These are only here to add shared code into main.js
-require('react');
-require('./app/shared/set-title-mixin');
+var React = require('react');
+var Router = require('react-router');
+var Route = Router.Route;
+var DefaultRoute = Router.DefaultRoute;
+var RouteHandler = Router.RouteHandler;
+var NotFoundRoute = Router.NotFoundRoute;
 
-// Simple router & incremental loader
-// Structure: #/module/other/parts?query-string
-// Placeholders: #/something/:id
-// Modules are loaded on-demand
-// Everything below a module is supposed to be part of that module
+var People = require('./utils/react-proxy?name=people!./app/people/people');
+var Projects = require('./utils/react-proxy?name=projects!./app/projects/projects');
+var Overview = require('./utils/react-proxy?name=projects!./app/projects/overview');
 
-var Router = {
-    defaultModule: 'projects',
-
-    showLoading: function() {},
-    hideLoading: function() {},
-
-    match: function(path, callback) {
-        // TODO: proper matching
-        if(path === '/projects') callback();
-    },
-
-    projectRoutes: function() {
-        Router.showLoading();
-        require.ensure([], function () {
-            Router.hideLoading();
-
-            Router.match('/projects', function() {
-                require('./app/projects/projects').show();
-            });
-
-            Router.match('/projects/:id', function() {
-                require('./app/projects/overview').show();
-            });
-        });
-    },
-
-    peopleRoutes: function() {
-        Router.showLoading();
-        require.ensure([], function () {
-            Router.hideLoading();
-
-            require('./app/people/people').show();
-        });
-    },
-
-    mapRoute: function() {
-        // TODO: proper parsing of route components
-        var route = document.location.hash.slice(2);
-        var sections = route.split('?');
-        var path = sections[0];
-        var pathSections = path.split('/');
-        var module = pathSections[0];
-
-        if(module === '') {
-            module = Router.defaultModule;
-        }
-
-        // Split points for dynamic loading
-        // Because of static analysis, must be hard-coded like this
-        if(module === 'projects') {
-            Router.projectRoutes();
-        }
-
-        if(module === 'people') {
-            Router.peopleRoutes();
-        }
-
-        // TODO: 404 handling
+var App = React.createClass({
+    render: function() {
+        return (
+            <div className="app">
+                <RouteHandler />
+            </div>
+        );
     }
-};
+});
 
-window.addEventListener("hashchange", Router.mapRoute, false);
-window.addEventListener("load", Router.mapRoute, false);
+var NotFound = React.createClass({
+    render: function() {
+        return (<h1>Not found</h1>);
+    }
+});
+
+var routes = (
+    <Route handler={App}>
+        <DefaultRoute handler={Projects} />
+        <Route name="people" handler={People} />
+        <Route name="projects" handler={Projects} />
+        <Route name="overview" path="/projects/:id" handler={Overview} />
+        <NotFoundRoute handler={NotFound} />
+    </Route>
+);
+
+Router.run(routes, function(Handler) {
+    React.render(<Handler />, document.body);
+});

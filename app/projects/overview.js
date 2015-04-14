@@ -2,12 +2,14 @@
 
 var React = require('react');
 
-var Overview = {
-    data: {id: 1, name: 'Geese71'},
+var Overview = React.createClass({
+    contextTypes: {
+        router: React.PropTypes.func
+    },
 
-    show: function() {
-        React.render(<div>{this.data.name}</div>, document.body);
+    render: function() {
+        return (<div>{this.context.router.getCurrentParams().id}</div>);
     }
-};
+});
 
 module.exports = Overview;

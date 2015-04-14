@@ -1,17 +1,23 @@
 /** @jsx React.DOM */
 var React = require('react');
+var Link = require('react-router').Link;
 var ProjectList = require('./components/project-list');
 
-var Projects = {
-    data: [
-        {id: 1, name: 'Geese71'},
-        {id: 2, name: 'Personal to do'},
-        {id: 3, name: 'One-to-one'}
-    ],
+var data = [
+    {id: 1, name: 'Geese71'},
+    {id: 2, name: 'Personal to do'},
+    {id: 3, name: 'One-to-one'}
+];
 
-    show: function() {
-        React.render(<ProjectList data={this.data} title="Projects" />, document.body);
+var Projects = React.createClass({
+    render: function() {
+        return (
+            <div>
+                <ProjectList data={data} title="Projects" />
+                <Link to="people">People</Link>
+            </div>
+        );
     }
-};
+});
 
 module.exports = Projects;

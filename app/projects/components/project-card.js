@@ -1,9 +1,10 @@
 /** @jsx React.DOM */
 
 var React = require('react');
+var Link = require('react-router').Link;
 
 if(!process.env.TEST) {
-    require('./project-card.scss');
+    require('./project-card.css');
 }
 
 var ProjectCard = React.createClass({
@@ -14,7 +15,7 @@ var ProjectCard = React.createClass({
     render: function() {
         return (
             <div className="ProjectList-project">
-                <a href={this.projectUrl(this.props.data.id)}>{this.props.data.name}</a>
+                <Link to="overview" params={this.props.data}>{this.props.data.name}</Link>
             </div>
         );
     }

@@ -1,10 +1,11 @@
 /** @jsx React.DOM */
 
 var React = require('react');
+var Link = require('react-router').Link;
 var SetTitleMixin = require('../../shared/set-title-mixin');
 
 if(!process.env.TEST) {
-    require('./people-list.scss');
+    require('./people-list.css');
 }
 
 var PeopleList = React.createClass({
@@ -20,7 +21,6 @@ var PeopleList = React.createClass({
                 <ul className="PeopleList">
                     {people}
                 </ul>
-                <a href="#/projects">Projects</a>
             </div>
         );
     }

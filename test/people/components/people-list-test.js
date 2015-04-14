@@ -11,11 +11,14 @@ describe('Just testing', function() {
 
     it('ensures we can test React components', function() {
         var React = require('react/addons');
+        //var stubRouterContext = require('../../stubRouterContext');
         var PeopleList = require('../../../app/people/components/people-list');
+        //var Subject = stubRouterContext(PeopleList, {data: data, title: 'Test'});
         var TestUtils = React.addons.TestUtils;
 
         var data = [{id: 1, name: 'Erik'}];
         var peopleList = TestUtils.renderIntoDocument(<PeopleList data={data} title="Test" />);
+//        var pepleList = TestUtils.renderIntoDocument(<Subject />);
         var ul = TestUtils.findRenderedDOMComponentWithTag(peopleList, 'ul');
         assert.equal(ul.getDOMNode().textContent, 'Erik');
         assert.equal(document.title, 'Test');
