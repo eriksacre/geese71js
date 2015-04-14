@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --progress --colors --watch",
-    "test": "TEST=1 mocha --recursive --compilers .:compiler.js"
+    "test": "TEST=1 mocha --recursive --compilers .:test/compiler.js"
   },
   "author": "Erik Sacré",
   "license": "MIT",
