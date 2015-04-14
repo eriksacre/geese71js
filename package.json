@@ -5,20 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --progress --colors --watch",
-    "test": "TEST=1 jest"
-  },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react"
-    ],
-    "moduleFileExtensions": [
-      "js"
-    ],
-    "testFileExtensions": [
-      "js"
-    ],
-    "testDirectoryName": "tests"
+    "test": "TEST=1 mocha --recursive --compilers .:compiler.js"
   },
   "author": "Erik Sacré",
   "license": "MIT",
@@ -28,11 +15,13 @@
   },
   "devDependencies": {
     "css-loader": "^0.9.1",
-    "jest-cli": "^0.4.0",
     "jsx-loader": "^0.13.1",
     "react-tools": "^0.13.1",
     "style-loader": "^0.9.0",
     "sass-loader": "0.6.0",
-    "webpack": "^1.4.13"
+    "webpack": "^1.4.13",
+    "jsdom": "^3.1.1",
+    "mocha": "^2.2.4",
+    "mocha-jsdom": "^0.2.1"
   }
 }
