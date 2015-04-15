@@ -3,17 +3,17 @@
 This is the starter project for a rich JavaScript client using:
 
 * React.js
+* React-router
 * webpack
 
 The project is designed for big-ish applications, i.e.
 
 * Code and assets are grouped per application module (projects, people)
-* Modules are loaded dynamically, the first time they are used
-* Jest is used for testing
+* Modules are loaded dynamically, the first time they are used (see router.js)
+* Mocha is used for testing with JSDom to allow browser-less testing
 
 ## To do
 
-* Find a real client-side router that can plug into the dynamic load mechanism
 * Flux
 
 ## Developing
