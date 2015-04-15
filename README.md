@@ -4,7 +4,7 @@ This is the starter project for a rich JavaScript client using:
 
 * React.js
 * React-router
-* webpack
+* Webpack
 
 The project is designed for big-ish applications, i.e.
 
@@ -23,7 +23,7 @@ The project is designed for big-ish applications, i.e.
 
 Run tests: npm test
 
-Note: Required Node 0.10.x. Tests do not work with newer versions.
+Note: Requires io.js. (JSDom 4.x.x requires it)
 
 ## Building for production
 

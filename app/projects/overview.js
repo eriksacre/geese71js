@@ -1,15 +1,19 @@
 /** @jsx React.DOM */
 
 var React = require('react');
+var Link = require('react-router').Link;
+var RouterContextMixin = require('../shared/router-context-mixin');
 
 var Overview = React.createClass({
-    contextTypes: {
-        router: React.PropTypes.func
-    },
+    mixins: [RouterContextMixin],
 
     render: function() {
-        var router = this.context.router;
-        return (<div>{router.getCurrentParams().id} -- {router.getCurrentQuery().name}</div>);
+        return (
+            <div>
+                <div>{this.getParams().id} -- {this.getQuery().name}</div>
+                <Link to="projects">Return to projects</Link>
+            </div>
+        );
     }
 });
 
