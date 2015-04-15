@@ -8,7 +8,8 @@ var Overview = React.createClass({
     },
 
     render: function() {
-        return (<div>{this.context.router.getCurrentParams().id}</div>);
+        var router = this.context.router;
+        return (<div>{router.getCurrentParams().id} -- {router.getCurrentQuery().name}</div>);
     }
 });
 

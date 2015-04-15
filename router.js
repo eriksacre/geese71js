@@ -5,6 +5,9 @@ var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var NotFoundRoute = Router.NotFoundRoute;
 
+// Some requires to include these into main.js
+require('./app/shared/set-title-mixin');
+
 var People = require('./utils/react-proxy?name=people!./app/people/people');
 var Projects = require('./utils/react-proxy?name=projects!./app/projects/projects');
 var Overview = require('./utils/react-proxy?name=projects!./app/projects/overview');
