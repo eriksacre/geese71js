@@ -10,20 +10,20 @@
   "author": "Erik Sacré",
   "license": "MIT",
   "dependencies": {
-    "envify": "^1.2.0",
+    "envify": "^3.4.0",
     "react": "^0.13.1",
     "react-router": "^0.13.2",
     "loader-utils": "^0.2.6"
   },
   "devDependencies": {
-    "css-loader": "^0.9.1",
+    "css-loader": "^0.10.1",
     "jsx-loader": "^0.13.1",
     "react-tools": "^0.13.1",
-    "style-loader": "^0.9.0",
-    "sass-loader": "0.6.0",
-    "webpack": "^1.4.13",
-    "jsdom": "^3.1.1",
+    "style-loader": "^0.10.2",
+    "sass-loader": "1.0.1",
+    "webpack": "^1.8.4",
+    "jsdom": "^4.4.0",
     "mocha": "^2.2.4",
-    "mocha-jsdom": "^0.2.1"
+    "mocha-jsdom": "^0.3.0"
   }
 }
