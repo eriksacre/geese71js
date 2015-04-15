@@ -1,27 +1,24 @@
 var React = require('react');
+var assign = require('object-assign');
 
 var stubRouterContext = function(Component, props, stubs) {
     function RouterStub() { }
 
-    RouterStub.makePath = function() {};
-    RouterStub.makeHref = function() {};
-    RouterStub.transitionTo = function() {};
-    RouterStub.replaceWith = function() {};
-    RouterStub.goBack = function() {};
-    RouterStub.getCurrentPath = function() {};
-    RouterStub.getCurrentRoutes = function() {};
-    RouterStub.getCurrentPathname = function() {};
-    RouterStub.getCurrentParams = function() {};
-    RouterStub.getCurrentQuery = function() {};
-    RouterStub.isActive = function() {};
-    RouterStub.getRouteAtDepth = function() {};
-    RouterStub.setRouteComponentAtDepth = function() {};
-
-    if(stubs) {
-        for(var key in stubs) {
-            RouterStub[key] = stubs[key];
-        }
-    }
+    assign(RouterStub, {
+        makePath () {},
+        makeHref () {},
+        transitionTo () {},
+        replaceWith () {},
+        goBack () {},
+        getCurrentPath () {},
+        getCurrentRoutes () {},
+        getCurrentPathname () {},
+        getCurrentParams () {},
+        getCurrentQuery () {},
+        isActive () {},
+        getRouteAtDepth() {},
+        setRouteComponentAtDepth() {}
+    }, stubs);
 
     return React.createClass({
         childContextTypes: {
