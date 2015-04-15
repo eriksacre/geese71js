@@ -21,6 +21,7 @@ var PeopleList = React.createClass({
                 <ul className="PeopleList">
                     {people}
                 </ul>
+                <Link to="projects">Projects</Link>
             </div>
         );
     }
