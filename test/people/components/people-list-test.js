@@ -1,12 +1,11 @@
-// See: https://github.com/danvk/mocha-react
-var jsdom = require('mocha-jsdom');
 var React = require('react/addons');
 var TestUtils = React.addons.TestUtils;
 var stubRouterContext = require('../../stubRouterContext');
 var assert = require('assert');
+var BrowserEnv = require('../../browser-env');
 
 describe('Just testing', function() {
-    jsdom();
+    BrowserEnv();
 
     it('ensures Mocha is setup properly', function() {
         assert.equal(1, 1);
