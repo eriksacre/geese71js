@@ -23,7 +23,7 @@
     "style-loader": "^0.10.2",
     "sass-loader": "1.0.1",
     "webpack": "^1.8.4",
-    "jsdom": "^4.4.0",
+    "jsdom": "^5.0.0",
     "mocha": "^2.2.4",
     "mocha-jsdom": "^0.3.0"
   }
