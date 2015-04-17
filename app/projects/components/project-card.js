@@ -8,10 +8,6 @@ if(!process.env.TEST) {
 }
 
 var ProjectCard = React.createClass({
-    projectUrl: function(id) {
-        return this.props.url + id;
-    },
-
     render: function() {
         return (
             <div className="ProjectList-project">

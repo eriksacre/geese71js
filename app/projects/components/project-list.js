@@ -13,7 +13,7 @@ var ProjectList = React.createClass({
 
     render: function() {
         var projects = this.props.data.map(function(project) {
-            return (<ProjectCard key={project.id} data={project} url='#/projects/' />);
+            return (<ProjectCard key={project.id} data={project} />);
         });
 
         return (
