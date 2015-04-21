@@ -16,7 +16,8 @@ The project is designed for big-ish applications, i.e.
 
 ## To do
 
-* Flux
+* Api call
+* Live updates
 
 ## Developing
 
