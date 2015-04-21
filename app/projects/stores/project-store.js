@@ -34,6 +34,10 @@ var ProjectStore = assign({}, EventEmitter.prototype, {
         return _projects;
     },
 
+    findById: function(id) {
+        return _projects[id];
+    },
+
     emitChange: function() {
         this.emit(CHANGE_EVENT);
     },

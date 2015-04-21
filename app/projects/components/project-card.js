@@ -9,9 +9,14 @@ if(!process.env.TEST) {
 
 var ProjectCard = React.createClass({
     render: function() {
+        var fav = '';
+        if(this.props.data.favourite)
+            fav = ' ★';
+
         return (
             <div className="ProjectList-project">
                 <Link to="overview" params={this.props.data}>{this.props.data.name}</Link>
+                {fav}
             </div>
         );
     }
