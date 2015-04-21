@@ -12,13 +12,14 @@ var ProjectList = React.createClass({
     mixins: [SetTitleMixin],
 
     render: function() {
-        var projects = this.props.data.map(function(project) {
-            return (<ProjectCard key={project.id} data={project} />);
-        });
+        var cards = [];
+        var projects = this.props.data;
+        for(var key in projects)
+            cards.push(<ProjectCard key={key} data={projects[key]} />);
 
         return (
             <div className="ProjectList">
-                {projects}
+                {cards}
             </div>
         );
     }
