@@ -7,7 +7,7 @@ module.exports = {
     },
     output: {
         path: './build',
-        publicPath: '/geese71js/build/',
+        publicPath: '/build/',
         filename: '[name].js'
     },
     module: {

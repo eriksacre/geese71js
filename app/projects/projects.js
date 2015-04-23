@@ -12,9 +12,7 @@ var Projects = React.createClass({
 
     componentDidMount: function() {
         ProjectStore.addChangeListener(this.onChange);
-        // Condition required because we do not persist the state yet
-        if(Object.keys(this.state.projects).length == 0)
-            ProjectActions.receiveAll();
+        ProjectActions.receiveAll();
     },
 
     componentWillUnmount: function() {

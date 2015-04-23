@@ -2,7 +2,6 @@ var AppDispatcher = require('../../dispatcher/app-dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var ProjectActionTypes = require('../actions/project-action-types');
 var assign = require('object-assign');
-var ProjectAPI = require('../utils/project-api');
 
 var CHANGE_EVENT = "change";
 
@@ -24,9 +23,20 @@ function create(name) {
     };
 }
 
-function toggleFavourite(id) {
+function setFavourite(id) {
     var project = _projects[id];
-    project.favourite = !project.favourite;
+    project.favourite = true;
+}
+
+function clearFavourite(id) {
+    var project = _projects[id];
+    project.favourite = false;
+}
+
+function update(project) {
+    var p = _projects[project.id];
+    p.name = project.name;
+    p.favourite = project.favourite;
 }
 
 var ProjectStore = assign({}, EventEmitter.prototype, {
@@ -58,16 +68,26 @@ AppDispatcher.register(function(action) {
             ProjectStore.emitChange();
             break;
 
-        case ProjectActionTypes.PROJECT_TOGGLE_FAVOURITE:
-            toggleFavourite(action.id);
+        case ProjectActionTypes.PROJECT_SET_FAVOURITE:
+            setFavourite(action.id);
+            ProjectStore.emitChange();
+            break;
+
+        case ProjectActionTypes.PROJECT_CLEAR_FAVOURITE:
+            clearFavourite(action.id);
             ProjectStore.emitChange();
             break;
 
         case ProjectActionTypes.PROJECT_RECEIVE_ALL:
-            // Would work through a callback
-            receiveAll(ProjectAPI.fetchAll());
+            receiveAll(action.projects);
             ProjectStore.emitChange();
             break;
+
+        case ProjectActionTypes.PROJECT_SVR_UPDATE:
+            update(action.project);
+            ProjectStore.emitChange();
+            break;
+
     }
 });
 

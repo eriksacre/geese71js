@@ -1,5 +1,7 @@
 var AppDispatcher = require('../../dispatcher/app-dispatcher');
 var ProjectActionTypes = require('./project-action-types');
+var ProjectAPI = require('../utils/project-api');
+var AppSubscriber = require('../../subscriber/app-subscriber');
 
 var ProjectActions = {
     create: function(name) {
@@ -9,16 +11,29 @@ var ProjectActions = {
         });
     },
 
-    toggleFavourite: function(id) {
+    setFavourite: function(id) {
         AppDispatcher.dispatch({
-            actionType: ProjectActionTypes.PROJECT_TOGGLE_FAVOURITE,
+            actionType: ProjectActionTypes.PROJECT_SET_FAVOURITE,
             id: id
         });
+        ProjectAPI.setFavourite(id);
+    },
+
+    clearFavourite: function(id) {
+        AppDispatcher.dispatch({
+            actionType: ProjectActionTypes.PROJECT_CLEAR_FAVOURITE,
+            id: id
+        });
+        ProjectAPI.clearFavourite(id);
     },
 
     receiveAll: function() {
-        AppDispatcher.dispatch({
-            actionType: ProjectActionTypes.PROJECT_RECEIVE_ALL
+        ProjectAPI.fetchAll(function(projects) {
+            AppDispatcher.dispatch({
+                actionType: ProjectActionTypes.PROJECT_RECEIVE_ALL,
+                projects: projects
+            });
+            AppSubscriber.subscribe('/projects');
         });
     }
 };

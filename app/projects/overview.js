@@ -30,7 +30,10 @@ var Overview = React.createClass({
 
     toggleFavourite: function(e) {
         e.preventDefault();
-        ProjectActions.toggleFavourite(this.state.project.id);
+        if(this.state.project.favourite)
+            ProjectActions.clearFavourite(this.state.project.id);
+        else
+            ProjectActions.setFavourite(this.state.project.id);
     },
 
     render: function() {

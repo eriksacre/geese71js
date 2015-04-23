@@ -16,8 +16,8 @@ The project is designed for big-ish applications, i.e.
 
 ## To do
 
-* Api call
-* Live updates
+* Authentication for subscriptions
+* Lots and lots of cleanup
 
 ## Developing
 

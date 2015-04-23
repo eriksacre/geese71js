@@ -16,7 +16,8 @@
     "loader-utils": "^0.2.6",
     "object-assign": "^2.0.0",
     "flux": "^2.0.1",
-    "keymirror": "~0.1.0"
+    "keymirror": "~0.1.0",
+    "faye": "^1.1.1"
   },
   "devDependencies": {
     "css-loader": "^0.10.1",

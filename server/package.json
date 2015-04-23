@@ -1,0 +1,14 @@
+{
+  "name": "geese71server",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "iojs server.js"
+  },
+  "author": "Erik Sacré",
+  "license": "MIT",
+  "dependencies": {
+    "faye": "^1.1.1",
+    "express": "^4.12.3",
+    "body-parser": "^1.12.3"
+  }
+}
