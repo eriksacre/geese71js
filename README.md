@@ -18,6 +18,7 @@ The project is designed for big-ish applications, i.e.
 
 * Authentication for subscriptions
 * Lots and lots of cleanup
+* When to unload store data and cancel subscription
 
 ## Developing
 
@@ -25,6 +26,8 @@ The project is designed for big-ish applications, i.e.
 * npm start
 
 Run tests: npm test
+
+Also 'npm install' and 'npm start' from within server folder to start the demo server on port 8000.
 
 Note: Requires io.js. (JSDom 5.x.x requires it)
 

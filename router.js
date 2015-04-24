@@ -8,6 +8,7 @@ var NotFoundRoute = Router.NotFoundRoute;
 // Some requires to include these into main.js
 require('./app/shared/set-title-mixin');
 require('./app/shared/router-context-mixin');
+require('faye');
 
 // Proxies for on-demand loading
 var People = require('./utils/react-proxy?name=people!./app/people/people');
