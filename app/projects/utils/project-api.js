@@ -14,7 +14,7 @@ var ProjectAPI = {
     }
 };
 
-// TODO: put in a proper helper file
+// TODO: put in a proper helper file + support sending JSON
 var API = {
     get: function(url, callback) {
         this._xhr('get', url, callback);

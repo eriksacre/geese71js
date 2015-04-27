@@ -5,5 +5,5 @@ module.exports = keyMirror({
     PROJECT_SET_FAVOURITE: null,
     PROJECT_CLEAR_FAVOURITE: null,
     PROJECT_RECEIVE_ALL: null,
-    PROJECT_SVR_UPDATE: null
+    PROJECT_UPDATE: null
 });

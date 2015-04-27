@@ -64,30 +64,29 @@ var ProjectStore = assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function(action) {
     switch(action.actionType) {
         case ProjectActionTypes.PROJECT_CREATE:
-            create(action.name);
+            create(action.payload.name);
             ProjectStore.emitChange();
             break;
 
         case ProjectActionTypes.PROJECT_SET_FAVOURITE:
-            setFavourite(action.id);
+            setFavourite(action.payload.id);
             ProjectStore.emitChange();
             break;
 
         case ProjectActionTypes.PROJECT_CLEAR_FAVOURITE:
-            clearFavourite(action.id);
+            clearFavourite(action.payload.id);
             ProjectStore.emitChange();
             break;
 
         case ProjectActionTypes.PROJECT_RECEIVE_ALL:
-            receiveAll(action.projects);
+            receiveAll(action.payload.projects);
             ProjectStore.emitChange();
             break;
 
-        case ProjectActionTypes.PROJECT_SVR_UPDATE:
-            update(action.project);
+        case ProjectActionTypes.PROJECT_UPDATE:
+            update(action.payload.project);
             ProjectStore.emitChange();
             break;
-
     }
 });
 

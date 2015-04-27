@@ -7,14 +7,14 @@ var ProjectActions = {
     create: function(name) {
         AppDispatcher.dispatch({
             actionType: ProjectActionTypes.PROJECT_CREATE,
-            name: name
+            payload: { name: name }
         });
     },
 
     setFavourite: function(id) {
         AppDispatcher.dispatch({
             actionType: ProjectActionTypes.PROJECT_SET_FAVOURITE,
-            id: id
+            payload: { id: id }
         });
         ProjectAPI.setFavourite(id);
     },
@@ -22,7 +22,7 @@ var ProjectActions = {
     clearFavourite: function(id) {
         AppDispatcher.dispatch({
             actionType: ProjectActionTypes.PROJECT_CLEAR_FAVOURITE,
-            id: id
+            payload: { id: id }
         });
         ProjectAPI.clearFavourite(id);
     },
@@ -31,7 +31,7 @@ var ProjectActions = {
         ProjectAPI.fetchAll(function(projects) {
             AppDispatcher.dispatch({
                 actionType: ProjectActionTypes.PROJECT_RECEIVE_ALL,
-                projects: projects
+                payload: { projects: projects }
             });
             AppSubscriber.subscribe('/projects');
         });

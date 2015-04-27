@@ -66,7 +66,7 @@ var ProjectRepository = {
     },
 
     publish: function(project) {
-        client.publish('/projects', { actionType: "PROJECT_SVR_UPDATE", project: project });
+        client.publish('/projects', { actionType: "PROJECT_UPDATE", payload: { project: project } });
     }
 };
 
