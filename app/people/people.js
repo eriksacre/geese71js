@@ -8,10 +8,8 @@ var data = [
     { id: 3, name: 'Katty' }
 ];
 
-var People = React.createClass({
+module.exports = React.createClass({
     render: function() {
         return (<PeopleList data={data} title="People" />);
     }
 });
-
-module.exports = People;

@@ -19,6 +19,7 @@ The project is designed for big-ish applications, i.e.
 * Authentication for subscriptions
 * Lots and lots of cleanup
 * When to unload store data and cancel subscription
+* Proper error handling, especially related to API calls
 
 ## Developing
 

@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var React = require('react');
 var ProjectCard = require('./project-card');
 var SetTitleMixin = require('../../shared/set-title-mixin');
@@ -8,7 +6,7 @@ if(!process.env.TEST) {
     require('./project-list.css');
 }
 
-var ProjectList = React.createClass({
+module.exports = React.createClass({
     mixins: [SetTitleMixin],
 
     render: function() {
@@ -24,5 +22,3 @@ var ProjectList = React.createClass({
         );
     }
 });
-
-module.exports = ProjectList;

@@ -3,7 +3,7 @@ var ProjectActionTypes = require('./project-action-types');
 var ProjectAPI = require('../utils/project-api');
 var AppSubscriber = require('../../subscriber/app-subscriber');
 
-var ProjectActions = {
+module.exports = {
     create: function(name) {
         AppDispatcher.dispatch({
             actionType: ProjectActionTypes.PROJECT_CREATE,
@@ -37,5 +37,3 @@ var ProjectActions = {
         });
     }
 };
-
-module.exports = ProjectActions;

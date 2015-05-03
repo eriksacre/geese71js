@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var React = require('react');
 var Link = require('react-router').Link;
 
@@ -7,7 +5,7 @@ if(!process.env.TEST) {
     require('./project-card.css');
 }
 
-var ProjectCard = React.createClass({
+module.exports = React.createClass({
     render: function() {
         var fav = '';
         if(this.props.data.favourite)
@@ -21,5 +19,3 @@ var ProjectCard = React.createClass({
         );
     }
 });
-
-module.exports = ProjectCard;

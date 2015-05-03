@@ -1,6 +1,6 @@
 var React = require('react');
 
-var RouterContextMixin = {
+module.exports = {
     contextTypes: {
         router: React.PropTypes.func
     },
@@ -13,5 +13,3 @@ var RouterContextMixin = {
         return this.context.router.getCurrentQuery();
     }
 };
-
-module.exports = RouterContextMixin;

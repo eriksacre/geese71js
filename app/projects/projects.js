@@ -1,11 +1,10 @@
-/** @jsx React.DOM */
 var React = require('react');
 var Link = require('react-router').Link;
 var ProjectList = require('./components/project-list');
 var ProjectStore = require('./stores/project-store');
 var ProjectActions = require('./actions/project-actions');
 
-var Projects = React.createClass({
+module.exports = React.createClass({
     getInitialState: function() {
         return { projects: ProjectStore.getAll() };
     },
@@ -32,5 +31,3 @@ var Projects = React.createClass({
         );
     }
 });
-
-module.exports = Projects;

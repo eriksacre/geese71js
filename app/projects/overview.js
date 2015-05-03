@@ -1,12 +1,10 @@
-/** @jsx React.DOM */
-
 var React = require('react');
 var Link = require('react-router').Link;
 var RouterContextMixin = require('../shared/router-context-mixin');
 var ProjectStore = require('./stores/project-store');
 var ProjectActions = require('./actions/project-actions');
 
-var Overview = React.createClass({
+module.exports = React.createClass({
     mixins: [RouterContextMixin],
 
     getInitialState: function() {
@@ -53,5 +51,3 @@ var Overview = React.createClass({
         );
     }
 });
-
-module.exports = Overview;

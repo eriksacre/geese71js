@@ -1,7 +1,7 @@
 var React = require('react');
 var assign = require('object-assign');
 
-var stubRouterContext = function(Component, props, stubs) {
+module.exports = function(Component, props, stubs) {
     function RouterStub() { }
 
     assign(RouterStub, {
@@ -38,5 +38,3 @@ var stubRouterContext = function(Component, props, stubs) {
         }
     });
 };
-
-module.exports = stubRouterContext;
