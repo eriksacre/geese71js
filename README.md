@@ -20,6 +20,7 @@ The project is designed for big-ish applications, i.e.
 * Lots and lots of cleanup
 * When to unload store data and cancel subscription
 * Proper error handling, especially related to API calls
+* Hashing the bundle or chunks, using the hashed values
 
 ## Developing
 
