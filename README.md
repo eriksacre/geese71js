@@ -11,6 +11,7 @@ The project is designed for big-ish applications, i.e.
 * Code and assets are grouped per application module (projects, people)
 * Modules are loaded dynamically, the first time they are used (see router.js)
 * Mocha is used for testing with JSDom to allow browser-less testing
+* Production version generates hashes in filenames to facilitate caching
 
 **This code base is strictly experimental!**
 
@@ -20,7 +21,6 @@ The project is designed for big-ish applications, i.e.
 * Lots and lots of cleanup
 * When to unload store data and cancel subscription
 * Proper error handling, especially related to API calls
-* Hashing the bundle or chunks, using the hashed values
 
 ## Developing
 

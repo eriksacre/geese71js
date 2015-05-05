@@ -1,4 +1,6 @@
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var production = process.env.NODE_ENV === 'production';
 
 module.exports = {
     cache: true,
@@ -6,9 +8,9 @@ module.exports = {
         main: './router.js'
     },
     output: {
-        path: './build',
-        publicPath: '/build/',
-        filename: '[name].js'
+        path: production ? './dist' : './build',
+        filename: production ? '[name].[chunkhash].js' : '[name].js',
+        hash: true
     },
     module: {
         loaders: [
@@ -19,5 +21,12 @@ module.exports = {
     },
     resolve: {
         extensions: ['', '.js']
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'index_template.html',
+            chunks: ['main']
+        }),
+        new webpack.optimize.OccurenceOrderPlugin(true)
+    ]
 };
