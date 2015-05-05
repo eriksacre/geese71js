@@ -35,7 +35,7 @@ Note: Requires io.js. (JSDom 5.x.x requires it)
 
 ## Building for production
 
-webpack -p
+npm run deploy
 
 ## Inspiration
 
