@@ -8,10 +8,10 @@ module.exports = {
     },
 
     setFavourite: function(id) {
-        API.put('/api/projects/favourites/' + id);
+        API.put('/api/projects/' + id + '/favourite');
     },
 
     clearFavourite: function(id) {
-        API.delete('/api/projects/favourites/' + id);
+        API.delete('/api/projects/' + id + '/favourite');
     }
 };

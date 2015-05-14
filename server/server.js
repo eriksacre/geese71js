@@ -10,7 +10,7 @@ var port = process.env.PORT || 8000;
 var assetsPath = process.env.NODE_ENV === 'production' ? '../dist' : '../build';
 
 app.use(bodyParser.json());
-app.use('/', express.static(path.join(__dirname , assetsPath)));
+app.use('/', express.static(path.join(__dirname, assetsPath)));
 
 var router = express.Router();
 
@@ -75,7 +75,7 @@ router.route('/projects')
         res.json(ProjectRepository.all());
     });
 
-router.route('/projects/favourites/:id')
+router.route('/projects/:id/favourite')
     .put(function(req, res) {
         ProjectRepository.setFavourite(req.params.id);
         res.status(204).end();
