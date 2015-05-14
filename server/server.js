@@ -7,7 +7,7 @@ var app = express(),
     bayeux = new faye.NodeAdapter({mount: '/ws', timeout: 45});
 
 var port = process.env.PORT || 8000;
-var assetsPath = process.env.NODE_ENV === 'production' ? '../dist' : '../build';
+var assetsPath = process.env.NODE_ENV === 'production' ? '../client/dist' : '../client/build';
 
 app.use(bodyParser.json());
 app.use('/', express.static(path.join(__dirname, assetsPath)));

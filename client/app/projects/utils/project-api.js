@@ -1,4 +1,4 @@
-var API = require('./api');
+var API = require('../../../utils/api');
 
 module.exports = {
     fetchAll: function(callback) {

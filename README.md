@@ -24,18 +24,20 @@ The project is designed for big-ish applications, i.e.
 
 ## Developing
 
+### From within client folder:
+
 * npm install
 * npm start
 
 Run tests: npm test
-
-Also 'npm install' and 'npm start' from within server folder to start the demo server on port 8000.
+Build for deployment: npm run deploy
 
 Note: Requires io.js. (JSDom 5.x.x requires it)
 
-## Building for production
+### From within server folder:
 
-npm run deploy
+* npm install
+* npm start (to start the demo server on port 8000)
 
 ## Inspiration
 
